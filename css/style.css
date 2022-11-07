@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+
+/*------Меню---------*/
+
+.header {
+    width: 100%;
+    background-color:crimson;
+}
+
+.wrapper {
+    padding: 0 15px;
+    max-width: 940px;
+    height: 110px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.header__logo {
+   margin-right: 20px;
+}
+
+.header__menu-burger {
+    visibility: hidden;
+    margin-right: 20px;
+    position: absolute;
+    right: 20px;
+    top:43px;
+}
+
+.img__close {
+    
+}
+
+
+
+.header__menu {
+    width: 620px;
+    max-width: 620px;
+}
+
+.header__list {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.header__list li {
+    list-style: none;
+    margin: 0 20px;
+}
+
+.header__link {
+    text-decoration: none;
+    line-height: 18px;
+    color: #FFFFFF;
+
+}
+
+
+/*---------Медиа----------*/
+
+@media (max-width: 660px) {
+
+    .header {
+        max-height: 100%;
+        background-color: #283645;
+        box-shadow: 0px 1px 0px #000000;
+    }
+
+    .wrapper {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 365px;
+    }
+
+    .header__logo {
+        display: flex;
+        align-self: stretch;
+        margin:auto auto 42px 15px;
+    }
+
+    .header__menu-burger {
+        visibility:visible;
+    }
+
+
+    .header__menu {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .header__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0px 1px 0px #000000, inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+        
+    }
+
+    .header__list li {
+        margin: 0 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 63px;
+        background: #283645;
+        box-shadow: 0px 1px 0px #000000, inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+        font-weight: 700;
+        line-height: 32px;
+        text-transform: uppercase;
+    }
+
+    .header__list li:hover {
+        background: #41556b;
+    }
+
+
+
+}
