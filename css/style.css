@@ -13,15 +13,16 @@ body {
     line-height: 30px;
 }
 
-
-/*------Меню---------*/
+/*------header---------*/
 
 .header {
     width: 100%;
-    background-color:crimson;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    z-index: 1;
 }
 
-.wrapper {
+.header__wrapper {
     padding: 0 15px;
     max-width: 940px;
     height: 110px;
@@ -29,25 +30,22 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
 }
 
 .header__logo {
-   margin-right: 20px;
+    display: flex;
+    align-items: center;
 }
 
-.header__menu-burger {
-    visibility: hidden;
+
+.header__logo_glasses {
+   
+}
+
+.header__logo_pink {
+    margin-left: 12px;
     margin-right: 20px;
-    position: absolute;
-    right: 20px;
-    top:43px;
-}
-
-.img__close {
-    
-}
-
+ }
 
 
 .header__menu {
@@ -74,66 +72,280 @@ body {
 
 }
 
+/*-----Гамбургер меню---------*/
+#menu__toggle {
+    opacity: 0;
+  }
+
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  #menu__toggle:checked ~ .menu__box {
+    left: 0;
+  }
+
+  .menu__btn {
+    position: fixed;
+    top: 50px;
+    right: 30px;
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transition-duration: .25s;
+  }
+
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+
+  .menu__box {
+    display: block;
+    position: fixed;
+    top: 110px;
+    left: -100%;
+    width: 100%;
+    list-style: none;
+    background-color: #283645;
+    box-shadow: 0px 1px 0px #000000;
+    transition-duration: .25s;
+    text-align: center;
+    z-index: 1;
+
+  }
+
+  .menu__item {
+    display: block;
+    padding: 15px 24px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 32px;
+    text-decoration: none;
+    transition-duration: .25s;
+    box-shadow: 0px 1px 0px #000000, inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+  }
+  
+  .menu__item:hover {
+    background-color: #415f80;
+  }
+
+
+/*------Main---------*/
+.main {
+    width: 100%;
+    color: #FFFFFF
+}
+
+.main__wrapper {
+    max-width: 940px;
+    min-height: 853px;
+    margin: 0 auto;
+    display: flex;
+    background-color: #415f80;
+    position: relative;
+}
+
+.main__box {
+    margin-top:208px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    height: 540px;
+    z-index: 2;
+}
+
+.main__title {
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 68px;
+    text-align: center;
+}
+
+.main__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 51px;
+    width: 300px;
+    height: 56px;
+    border: 3px solid #FFFFFF;
+    border-radius: 29px;
+    padding: 20px auto;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 18px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.main__ico {
+    margin-top: 67px;
+    width: 205px;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end ;
+}
+
+.ico_apple {
+    background: url(../img/svg/apple-logo.svg) no-repeat center center;
+    width: 47px;
+    height: 56px;
+}
+
+.ico_android {
+    background: url(../img/svg/android-logo.svg) no-repeat center center;
+    width: 43px;
+    height: 47px;
+}
+
+.ico_windows {
+    background: url(../img/svg/microsoft-logo.svg) no-repeat center center;
+    width: 44px;
+    height: 41px;
+}
+
+.main__sub-title {
+    display: block;
+    margin-top: 58px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.main__img {
+  position: absolute;
+  background: url(../img/arm.png) no-repeat center center;
+  width: 1050px;
+  width: 100%;
+  height: 100%;
+  height: 645px;
+  margin-top: 208px;
+  z-index: 1;
+}
 
 /*---------Медиа----------*/
+@media (max-width: 320px) {
+
+    .header__wrapper {
+        height: 69px;
+    }
+
+    .menu__btn {
+        top: 30px;
+        right: 20px;
+      }
+
+      .header__logo_glasses {
+        display: none;
+      }
+
+      .menu__box {
+        top: 69px;
+      }
+}
+
 
 @media (max-width: 660px) {
 
-    .header {
-        max-height: 100%;
-        background-color: #283645;
-        box-shadow: 0px 1px 0px #000000;
-    }
-
-    .wrapper {
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        height: 365px;
-    }
-
-    .header__logo {
-        display: flex;
-        align-self: stretch;
-        margin:auto auto 42px 15px;
-    }
-
-    .header__menu-burger {
-        visibility:visible;
-    }
-
+  .main__wrapper {
+    height: 984px;
+    
+}
 
     .header__menu {
-        width: 100%;
-        margin: 0 auto;
+        display: none;
+        height: 80px;
+        font-size: 20px;
+    }
+
+    .main__box {
+      margin-top:465px;
+      height: 398px;
+  }
+
+  .main__title {
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 120%;
+    width: 300px;
+    max-height: 127px;
+}
+
+  .main__button {
+    margin-top: 39px;
+    width: 300px;
+    height: 56px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  .main__ico {
+    margin-top: 46px;
+  }
+
+  .main__sub-title {
+    margin-top: 48px;
+  }
+
+  .main__img {
+    background: url(../img/arm2.png) no-repeat center center;
+    margin-top: 60px;
+  }
+
+}
+
+@media (max-width: 750px) {
+
+   .header__menu {
+        width: 500px;
+        max-width: 500px; 
     }
 
     .header__list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        box-shadow: 0px 1px 0px #000000, inset 0px 1px 0px rgba(255, 255, 255, 0.15);
-        
+        height: 90px;
     }
 
-    .header__list li {
-        margin: 0 0;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 63px;
-        background: #283645;
-        box-shadow: 0px 1px 0px #000000, inset 0px 1px 0px rgba(255, 255, 255, 0.15);
-        font-weight: 700;
-        line-height: 32px;
-        text-transform: uppercase;
+    .header__link {
+        font-size: 20px;
+        line-height: 45px;
     }
+   }
 
-    .header__list li:hover {
-        background: #41556b;
-    }
+@media (min-width: 661px) {
 
-
-
+    .hamburger-menu {
+        display: none;
+}
 }
